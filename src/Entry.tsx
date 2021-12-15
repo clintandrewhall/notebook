@@ -1,16 +1,13 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { Global, css, jsx } from '@emotion/react';
-import { EuiPageTemplate } from '@elastic/eui';
+import { Global, css } from '@emotion/react';
 
 import { LoadedEntry } from './types';
-import { Header } from './Header';
-import { SideNav } from './SideNav';
 
 import 'github-markdown-css';
 
 export const Entry = ({ entry }: { entry: LoadedEntry }) => {
-  const { title, body } = entry;
+  const { body } = entry;
 
   return (
     <div>
@@ -25,18 +22,10 @@ export const Entry = ({ entry }: { entry: LoadedEntry }) => {
           }
         `}
       />
-      <Header />
-      <EuiPageTemplate
-        className="main"
-        pageSideBar={<SideNav />}
-        pageHeader={{
-          pageTitle: title,
-        }}>
-        <div
-          className="markdown-body"
-          dangerouslySetInnerHTML={{ __html: body }}
-        />
-      </EuiPageTemplate>
+      <div
+        className="markdown-body"
+        dangerouslySetInnerHTML={{ __html: body }}
+      />
     </div>
   );
 };

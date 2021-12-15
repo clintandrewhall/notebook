@@ -25,13 +25,10 @@
       "node",
       "webpack-env",
       "@emotion/react/types/css-prop"
-    ]
+    ],
+    "jsxImportSource": "@emotion/react"
   },
-  "plugins": [
-    {
-      "name": "typescript-plugin-css-modules"
-    }
-  ],
+  "plugins": [],
   "include": [
     "src"
   ]
